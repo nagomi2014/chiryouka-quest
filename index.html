@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>治療家クエスト ─ 自立への冒険</title>
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦔</text></svg>">
+</head>
+<body>
+  <!-- Status Bar -->
+  <header class="status-bar">
+    <div class="status-left">
+      <div class="level-badge" id="levelBadge">Lv.1</div>
+      <div class="player-title" id="playerTitle">見習い治療家</div>
+    </div>
+    <div class="status-right">
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="totalProgress" style="width: 0%"></div>
+      </div>
+      <div class="progress-text" id="progressText">0/100</div>
+    </div>
+  </header>
+
+  <!-- Back Button -->
+  <button class="back-btn" id="backBtn" onclick="app.goBack()">← 戻る</button>
+
+  <!-- Particles Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Map View -->
+    <div class="view active" id="mapView">
+      <div class="map-view">
+        <div class="map-title">
+          <h1>🏰 治療家クエスト</h1>
+          <p>─ 自立への冒険 ─</p>
+        </div>
+        <div class="map-subtitle">全100クエストをクリアして、自立した治療家になろう</div>
+        <div class="world-path" id="worldPath"></div>
+      </div>
+    </div>
+
+    <!-- World View -->
+    <div class="view" id="worldView">
+      <div class="world-view">
+        <div class="world-header" id="worldHeader"></div>
+        <div id="worldHarry"></div>
+        <div class="world-description" id="worldDescription"></div>
+        <div class="quest-list" id="questList"></div>
+      </div>
+    </div>
+
+    <!-- Quest View -->
+    <div class="view" id="questView">
+      <div class="quest-view">
+        <div class="quest-header-card" id="questHeader"></div>
+        <div id="questHarry"></div>
+        <div class="enemy-section" id="enemySection"></div>
+        <div class="clear-section" id="clearSection"></div>
+      </div>
+      <div class="complete-btn-container">
+        <button class="complete-btn disabled" id="completeBtn" onclick="app.completeQuest()">
+          クエストクリア！
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Level Up Overlay -->
+  <div class="overlay" id="overlay">
+    <div id="overlayContent"></div>
+  </div>
+
+  <!-- Confetti Container -->
+  <div class="confetti-container" id="confettiContainer"></div>
+
+  <script src="js/data.js?v=4"></script>
+  <script src="js/sound.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
+</body>
+</html>
